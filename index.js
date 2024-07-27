@@ -95,7 +95,7 @@ app.post('/login',
                     //     id: userDoc._id,
                     //     email,
                     // });
-                    res.cookie('token', token, { secure: isProduction, sameSite: 'none' }).json({
+                    res.cookie('token', token, { secure: true, sameSite: 'none' }).json({
                         id: userDoc._id,
                         email,
                     });
