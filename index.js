@@ -91,7 +91,7 @@ app.post('/login',
                         res.status(500).json('Error signing token');
                         return;
                     }
-                    res.cookie('token', token, { httpOnly: true, secure: false, sameSite: 'lax' }).json({
+                    res.cookie('token', token, { secure: true, sameSite: 'lax' }).json({
                         id: userDoc._id,
                         email,
                     });
