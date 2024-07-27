@@ -16,7 +16,7 @@ const client = new OAuth2Client('361276648975-ca1oigh3okoopasmt9bu9jtdrrreqt2n.a
 
 app.use(cors({ 
     credentials: true, 
-    origin: 'http://localhost:3000',
+    origin: 'https://taskmanagerfrontend-1.onrender.com',
     methods: 'GET,POST,PUT,DELETE',
 }));
 app.use(express.json());
