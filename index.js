@@ -41,7 +41,6 @@ mongoose.connect('mongodb://arunaasureshkumar:l0nKbLbF1L0HvA6o@ac-jizlebv-shard-
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log('MongoDB connection error:', err));
 
-// Middleware for validation errors
 const validateErrors = (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -91,7 +90,12 @@ app.post('/login',
                         res.status(500).json('Error signing token');
                         return;
                     }
-                    res.cookie('token', token, { secure: true, sameSite: 'lax' }).json({
+                    console.log('token', token);
+                    // res.cookie('token', token, { secure: true, sameSite: 'lax' }).json({
+                    //     id: userDoc._id,
+                    //     email,
+                    // });
+                    res.cookie('token', token, { secure: isProduction, sameSite: 'none' }).json({
                         id: userDoc._id,
                         email,
                     });
