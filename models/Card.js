@@ -8,7 +8,7 @@ const CardSchema = new Schema({
     description: { type: String, required: true },
     category: { type: String, required: true },
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
-});
+}, { timestamps: true });
 
 const CardModel = model('Card', CardSchema);
 
