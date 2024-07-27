@@ -19,6 +19,7 @@ const client = new OAuth2Client('361276648975-ca1oigh3okoopasmt9bu9jtdrrreqt2n.a
 const salt = bcrypt.genSaltSync(10);
 const secret = 'qwerfcbvhnjklpwsdfxcvghu';
 
+const app = express();
 app.use(cors({ 
     credentials: true, 
     origin: process.env.API_URL,
