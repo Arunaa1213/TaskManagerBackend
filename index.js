@@ -1,12 +1,12 @@
-require('dotenv').config();
+import 'dotenv/config';
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
-const User = require('./models/User');
-const Task = require('./models/Card');
+const User = require('./models/User.js');
+const Task = require('./models/Card.js');
 const passport = require('passport');
-require('./passport'); 
+import './passport.js'; 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
